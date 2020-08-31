@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- USAR SEMPRE http-server -c-1 . PARA ABRIR O SERVIDOR NODE-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercícios Html</title>
+        <style>
+            #conteudo {
+                padding: 30px 0px;
+
+            }
+            .hide{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <header>Exercicios html</header>
+        <nav>
+            <br>
+            <a href wm-nav="exercicios/teste.html">| 00 - Teste</a> 
+            <a href wm-nav="exercicios/texto1.html">| 01 - Texto 1</a> 
+            <a href wm-nav="exercicios/texto2.html">| 02 - Texto 2</a> 
+            <a href wm-nav="exercicios/listas.html">| 03 - Listas</a> 
+            <a href wm-nav="exercicios/listaAninhada.html">| 04 - Lista Aninhada</a> 
+            <a href wm-nav="exercicios/links.html">| 05 - Link</a> 
+            <a href wm-nav="exercicios/tabela.html">| 06 - Tabela</a> 
+            <a href wm-nav="exercicios/form/form.html">| 07 - Formulário</a> 
+            <a href wm-nav="exercicios/imagens.html">| 08 - Imagens</a> 
+            <a href wm-nav="exercicios/video.html">| 09 - Videos</a> 
+        </nav>
+        <section id="conteudo"></section>
+        <footer>
+            <br>
+            Curso de Web Moderno
+        </footer>
+        <script>
+            document.querySelectorAll('[wm-nav]').forEach(link => {
+                const conteudo = document.getElementById('conteudo')
+                link.onclick = function(e){
+                    e.preventDefault()
+                    fetch(link.getAttribute('wm-nav'))
+                        .then(resp => resp.text())//pega o conteudo html da pagina requisitada
+                        .then(html => conteudo.innerHTML = html)// joga o que foi pego na constante criada (conteudo)
+                }
+            })
+        </script>
+
+    </body>
+</html>
