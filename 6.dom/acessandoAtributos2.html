@@ -17,7 +17,16 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        //estamos testando um seletor mais complexo, seria mais util usar o #compras no querySelector
+        console.log('Elemento ul ----------------------------')
+        console.log('ChildNodes', lista.childNodes)
+        console.log('destino',lista.destino)
+        console.log('getAttribute', lista.getAttribute('destino'))
+        console.log('hasAttribute', lista.hasAttribute('destino')) //vê se tem o atributo
+        lista.setAttribute('destino', 'empresa')
+        lista.setAttribute('status', 'aberto') //adcionou um atributo que nao existe
+        lista.removeAttribute('destino')
     </script>
 </body>
 
