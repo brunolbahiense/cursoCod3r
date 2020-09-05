@@ -9,9 +9,27 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <!-- onclick="navegarem5s(event)" -->
+        <a espera-um-pouco href="https://google.com.br">Google</a>
     </div>
     <script>
-        // ...
+        function navegarem5s (e) {
+            e.preventDefault()
+            console.log('Saindo em 5 seg')
+            setTimeout(() => {
+                const link = e.target
+                window.location.href = link.href // está subtisntuindo o endereço na barra de pesquisa
+            }, 5000)
+        }
+
+        // forma melhor utilizada para manipular o HTML
+        /* const a = document.querySelector('a')
+        a.onclick = navegarem5s */
+
+        // Boa prática: ao colocar um atributo personalizado, o mesmo é ignorado pelo navegador, 
+        //escondendo do usuario a manipulação do html que ocorre
+        const a = document.querySelector('[espera-um-pouco]')
+        a.onclick = navegarem5s
+
     </script>
 </body>
