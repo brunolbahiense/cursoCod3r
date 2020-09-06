@@ -15,12 +15,8 @@ function barreira (reversa = false) {
     this.elemento.appendChild(reversa  ? corpo : borda)
     this.elemento.appendChild(reversa  ? borda : corpo)
 
-    this.setAltura = altura => corpo.style.heith = `${altura}px`
+    this.setAltura = altura => corpo.style.height = `${altura}px`
 }
-
-/* const b = new barreira(true)
-b.setAltura(200)
-document.querySelector('[wm-flappy]').appendChild(b.elemento) */
 
 function parDeBarreiras (altura, abertura, x){
     this.elemento = novoElemento('div', 'par-de-barreiras')
