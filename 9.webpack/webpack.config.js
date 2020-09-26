@@ -11,6 +11,10 @@ module.exports = {
         filename: 'principal.js',
         path: __dirname + '/public' //esse dirname aponta pro raiz, ou seja a pasta webpack
     },
+    devServer: {
+        contentBase: './public',
+        port: 9000
+    },
     optimization: {
         minimizer: [
             new optimizeCssAssetsPluguin({})
@@ -38,6 +42,9 @@ module.exports = {
                 'css-loader',
                 'sass-loader',
             ]
+        }, {
+            test:/\.(png|svg|jpg|gif)$/,
+            use: ['file-loader']
         }]
     }
 }
