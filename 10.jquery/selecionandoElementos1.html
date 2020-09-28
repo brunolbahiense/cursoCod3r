@@ -49,6 +49,26 @@
     </form>
 
     <script>
-        // ...
+        // funcionalidades comuns entre JS e jQuery
+        $('#feira').addClass('destaque').removeClass('destaque')
+        $('li').addClass('destaque')
+        $('[wm-obrigatorio]').removeClass('destaque')
+        $('li.opcional').removeClass('destaque')
+        $('div p span').addClass('destaque')
+
+
+        //funcionalidades exclusivas do jquery
+        $('li:first').css('border','solid 3px yellow') // seleciona o peimeiro
+        $('li:odd').css('border', 'solid 10px orange') // seleciona os impares
+        $('li:gt(1)').css('border', 'solid 10px white')//seleciona aqueles com indice superior à (no caso 1)
+        $('li:not(:last)').css('border', 'none') // seleciona aquele que nao é (no caso o ultimo)
+
+        // relacionado a formularios
+        $('form *').hide()
+        $('form :text').show()
+        $('form :password').show()
+        $('form :checkbox').show()
+        $('form :radio').show()
+        $('form :file').show()
     </script>
 </body>
