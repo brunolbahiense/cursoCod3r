@@ -14,6 +14,12 @@
     <div>2</div>
 
     <script>
-        // ...
+        $('div').hide(5000).show(5000).fadeOut(5000)
+        console.log($('div').get(0))// o jquery nao trabalha de fato com o objeto na dom, mas sim com um nó que o mesmo cria para poder manitular
+        console.log($.isEmptyObject({}))// o seletor $ pode ser usado também como um objeto, me parace ser um bom artifício para fazer testes
+        console.log(jQuery.inArray(3,[1,2,3])) //pode-se utilizar o jQuery para fazer as chamadas também, porém o $ é mais fácil
+
+
+        
     </script>
 </body>
