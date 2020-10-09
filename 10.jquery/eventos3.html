@@ -26,6 +26,19 @@
     <span id='resultado'></span>
 
     <script>
-        // ...
+        function exibirDadosEvento (e) {
+            $('#resultado').empty()
+            const div1 = $('<div>')
+            const div2 = $('<div>')
+
+            $('#resultado').append(div1, div2)
+            div1.append(`target: ${e.target.id}`) // pra saber qual elemento dispatou o evento
+
+            const rt = e.relatedTarget ? e.relatedTarget.tagName : null
+            div1.append(`<br> relatedTarget: ${rt}`)
+        }
+
+        $('#div1, #div2').on('mouseenter mouseleave', exibirDadosEvento)
+        $('input').keyup(exibirDadosEvento)
     </script>
 </body>
