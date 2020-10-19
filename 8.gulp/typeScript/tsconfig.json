@@ -1,0 +1,10 @@
+{
+    "files": [
+        "src/**/*.ts"
+    ],
+    "compilerOptions": {
+        "rootDir": "src",
+        "noImplicitAny": true,
+        "target": "es5" //escolhe a vesrsão a qual será compilado o arquivo para JS
+    }
+}
